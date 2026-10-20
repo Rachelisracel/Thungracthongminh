@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Nhom 4 - Smart Trash Bin",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic", "top": -140, "left": 160, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo_lid", "top": 150, "left": 160, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn_fc51_lid", "top": -30, "left": -180, "attrs": { "color": "green", "label": "FC-51 Nap" } },
+    { "type": "wokwi-pushbutton", "id": "btn_fc51_vac", "top": 60, "left": -180, "attrs": { "color": "blue", "label": "FC-51 San" } },
+    { "type": "wokwi-led", "id": "led_fan", "top": -60, "left": 360, "attrs": { "color": "green", "label": "Quat 12V" } },
+    { "type": "wokwi-led", "id": "led_heat", "top": 20, "left": 360, "attrs": { "color": "red", "label": "Mayso 12V" } },
+    { "type": "wokwi-led", "id": "led_status", "top": 100, "left": 360, "attrs": { "color": "yellow", "label": "Bao Day Rac" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -30, "left": 310, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 50, "left": 310, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 130, "left": 310, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:GND.1", "ultrasonic:GND", "black", [ "v0" ] ],
+    [ "esp:VIN", "ultrasonic:VCC", "red", [ "v0" ] ],
+    [ "esp:D5", "ultrasonic:TRIG", "blue", [ "v0" ] ],
+    [ "esp:D18", "ultrasonic:ECHO", "orange", [ "v0" ] ],
+
+    [ "btn_fc51_lid:1.l", "esp:GND.1", "black", [ "v0" ] ],
+    [ "btn_fc51_lid:2.r", "esp:D19", "green", [ "v0" ] ],
+
+    [ "btn_fc51_vac:1.l", "esp:GND.1", "black", [ "v0" ] ],
+    [ "btn_fc51_vac:2.r", "esp:D23", "blue", [ "v0" ] ],
+
+    [ "esp:GND.1", "servo_lid:GND", "black", [ "v0" ] ],
+    [ "esp:VIN", "servo_lid:V+", "red", [ "v0" ] ],
+    [ "esp:D13", "servo_lid:PWM", "purple", [ "v0" ] ],
+
+    [ "esp:D12", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "led_fan:A", "green", [ "v0" ] ],
+    [ "led_fan:C", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "esp:D14", "r2:1", "red", [ "v0" ] ],
+    [ "r2:2", "led_heat:A", "red", [ "v0" ] ],
+    [ "led_heat:C", "esp:GND.2", "black", [ "v0" ] ],
+
+    [ "esp:D27", "r3:1", "yellow", [ "v0" ] ],
+    [ "r3:2", "led_status:A", "yellow", [ "v0" ] ],
+    [ "led_status:C", "esp:GND.2", "black", [ "v0" ] ]
+  ]
+}
