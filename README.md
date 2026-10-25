@@ -36,7 +36,10 @@ Thungracthongminh/
 ├── include/                # Thư viện header tự định nghĩa
 ├── lib/                    # Thư viện ngoài
 ├── src/
-│   └── main.cpp            # Mã nguồn chính điều khiển hệ thống
+│   ├── main.cpp            # Điểm khởi chạy bắt buộc của Arduino
+│   └── niem_phong_tui_rac.cpp # Xử lý nghiệp vụ niêm phong
+├── include/
+│   └── niem_phong_tui_rac.h   # Khai báo hàm tiếng Việt
 ├── diagram.json            # Sơ đồ kết nối mạch ảo trên Wokwi
 ├── wokwi.toml              # Cấu hình nạp firmware cho Wokwi
 ├── platformio.ini          # Cấu hình môi trường và thư viện PlatformIO
