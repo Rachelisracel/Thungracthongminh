@@ -8,6 +8,7 @@
     { "type": "wokwi-servo", "id": "servo_lid", "top": 150, "left": 160, "attrs": {} },
     { "type": "wokwi-pushbutton", "id": "btn_fc51_lid", "top": -30, "left": -180, "attrs": { "color": "green", "label": "FC-51 Nap" } },
     { "type": "wokwi-pushbutton", "id": "btn_fc51_vac", "top": 60, "left": -180, "attrs": { "color": "blue", "label": "FC-51 San" } },
+    { "type": "wokwi-pushbutton", "id": "btn_seal", "top": 150, "left": -180, "attrs": { "color": "red", "label": "Niem phong" } },
     { "type": "wokwi-led", "id": "led_fan", "top": -60, "left": 360, "attrs": { "color": "green", "label": "Quat 12V" } },
     { "type": "wokwi-led", "id": "led_heat", "top": 20, "left": 360, "attrs": { "color": "red", "label": "Mayso 12V" } },
     { "type": "wokwi-led", "id": "led_status", "top": 100, "left": 360, "attrs": { "color": "yellow", "label": "Bao Day Rac" } },
@@ -26,6 +27,9 @@
 
     [ "btn_fc51_vac:1.l", "esp:GND.1", "black", [ "v0" ] ],
     [ "btn_fc51_vac:2.r", "esp:D23", "blue", [ "v0" ] ],
+
+    [ "btn_seal:1.l", "esp:GND.1", "black", [ "v0" ] ],
+    [ "btn_seal:2.r", "esp:D25", "red", [ "v0" ] ],
 
     [ "esp:GND.1", "servo_lid:GND", "black", [ "v0" ] ],
     [ "esp:VIN", "servo_lid:V+", "red", [ "v0" ] ],

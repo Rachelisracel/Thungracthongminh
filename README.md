@@ -22,6 +22,11 @@ Hệ thống thùng rác thông minh đa năng ứng dụng vi điều khiển E
 | **Quạt hút sàn** | Relay 1 / Quạt 12V | **IN: D12** | Đóng/ngắt nguồn quạt hút |
 | **Cụm gia nhiệt** | Relay 2 / Mayso 12V | **IN: D14** | Kích hoạt dây nhiệt hàn túi |
 | **Đèn cảnh báo** | Relay 3 / LED Vàng | **IN: D27** | Bật khi mức rác đầy >= 90% |
+| **Nút niêm phong** | Nút nhấn | **D25** | Mức LOW kích hoạt quy trình niêm phong |
+
+## Quy trình niêm phong túi rác
+
+Nhấn nút **Niêm phong (D25)** để bắt đầu. Hệ thống sẽ đóng nắp và chờ servo ổn định 1 giây, bật mayso trong 3.5 giây, tắt mayso và chờ nguội 2 giây, sau đó mở nắp để lấy túi rác. Trong suốt chu trình, cảm biến mở nắp bị khóa liên động và mayso luôn được tắt trước khi nắp mở.
 
 ---
 
